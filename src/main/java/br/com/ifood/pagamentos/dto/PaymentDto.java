@@ -1,10 +1,6 @@
 package br.com.ifood.pagamentos.dto;
 
 import br.com.ifood.pagamentos.model.Status;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import java.math.BigDecimal;
 

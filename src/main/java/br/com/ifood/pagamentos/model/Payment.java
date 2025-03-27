@@ -59,6 +59,34 @@ public class Payment {
         return value;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public String getNumber() {
+        return number;
+    }
+
+    public String getExpiration() {
+        return expiration;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public Long getOrderId() {
+        return orderId;
+    }
+
+    public Long getPaymentMethodId() {
+        return paymentMethodId;
+    }
+
     public void setId(Long id) {
         this.id = id;
     }

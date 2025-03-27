@@ -26,6 +26,11 @@ public class PaymentController {
         return service.getAll(pageable);
     }
 
+    @PatchMapping("/{id}/confirm")
+    public void paymentConfirm(@PathVariable @NotNull Long id){
+        service.paymentConfirm(id);
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<PaymentDto> getById(@PathVariable @NotNull Long id) {
         PaymentDto dto = service.getById(id);
