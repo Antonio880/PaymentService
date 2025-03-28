@@ -6,9 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @FeignClient("orders-ms")
-public class PedidoClient {
-    @RequestMapping(method = RequestMethod.PUT, value = "/pedidos/{id}/pago")
-    public void updatePayment(@PathVariable Long id) {
-
-    }
+public interface OrderClient {
+    @RequestMapping(method = RequestMethod.PUT, value = "/orders/{id}/paid")
+    public void updatePayment(@PathVariable Long id);
 }

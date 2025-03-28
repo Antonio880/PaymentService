@@ -1,7 +1,7 @@
 package br.com.ifood.pagamentos.service;
 
 import br.com.ifood.pagamentos.dto.PaymentDto;
-import br.com.ifood.pagamentos.http.PedidoClient;
+import br.com.ifood.pagamentos.http.OrderClient;
 import br.com.ifood.pagamentos.model.Payment;
 import br.com.ifood.pagamentos.model.Status;
 import br.com.ifood.pagamentos.repository.PaymentRepository;
@@ -24,7 +24,7 @@ public class PaymentService {
     private ModelMapper modelMapper;
 
     @Autowired
-    private PedidoClient pedido;
+    private OrderClient order;
 
     public Page<PaymentDto> getAll(Pageable pageable) {
         return repository
@@ -41,7 +41,7 @@ public class PaymentService {
 
         payment.get().setStatus(Status.CONFIRMADO);
         repository.save(payment.get());
-        pedido.updatePayment(payment.get().getOrderId());
+        order.updatePayment(payment.get().getOrderId());
     }
 
     public PaymentDto getById(Long id) {
